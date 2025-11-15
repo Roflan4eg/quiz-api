@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
-	"time"
 
 	"github.com/Roflan4eg/quiz-api/internal/app/middleware"
 	"github.com/Roflan4eg/quiz-api/pkg/logger"
@@ -13,7 +12,6 @@ import (
 )
 
 func (h *Handler) GetQuestions(w http.ResponseWriter, r *http.Request) {
-	time.Sleep(time.Second * 7)
 	questions, err := h.questionService.GetAllQuestions()
 	if err != nil {
 		middleware.HandleError(w, r, err)
